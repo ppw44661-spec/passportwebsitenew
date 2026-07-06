@@ -1,3 +1,4 @@
+// import React, { useState, useEffect, useRef, useCallback } from "react";
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Search, Menu, X, ChevronDown, ArrowRight } from "lucide-react";
 import "./home.css";
@@ -409,20 +410,20 @@ function Nav({ onTrackClick, onShowServices, onShowCompany, onGoHome, onMenuTogg
                 <div className={`bcg-nav-dropdown ${openMenu === item.label ? "open" : ""}`}>
                   {item.submenu.map((sub) => (
                     <button
-                      key={sub.label}
-                      type="button"
-                      className="bcg-nav-dropdown-link"
-                      onClick={() => {
-                        setOpenMenu(null);
-                        if (sub.kind === "services") {
-                          onShowServices?.(sub.value);
-                        } else if (sub.kind === "company") {
-                          onShowCompany?.(sub.value);
-                        }
-                      }}
-                    >
-                      {sub.label}
-                    </button>
+  key={sub.label}
+  type="button"
+  className="bcg-nav-dropdown-link"
+  onClick={() => {
+    setOpenMenu(null);
+    if (sub.kind === "services") {
+      onShowServices?.(sub.value);
+    } else if (sub.kind === "company") {
+      onShowCompany?.(sub.value);
+    }
+  }}
+>
+  {sub.label}
+</button>
                   ))}
                 </div>
               </div>
@@ -1038,10 +1039,10 @@ export default function Home({ onTrackClick }) {
   };
 
   const handleShowCompany = useCallback((page = "about") => {
-    setCompanyPage(page);
-    setShowCompany(true);
-    setShowServices(false);
-  }, []);
+  setCompanyPage(page);
+  setShowCompany(true);
+  setShowServices(false);
+}, []);
 
   const handleGoHome = () => {
     setShowCompany(false);

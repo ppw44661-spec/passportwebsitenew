@@ -91,35 +91,35 @@ const IMPACT_CARDS = [
   },
 ];
 
-const TILES = [
-  {
-    kicker: "BCG Answer",
-    title: "BCG Answer",
-    text: "Discover the answer to your most important business challenges. BCG Answer delivers integrated insights powered by our cross-functional expertise and the latest thinking shaping today’s business decisions.",
-    cta: "Ask us a question",
-    href: "https://www.bcg.com/bcg-answer",
-    className: "tile-1",
-    image: "https://picsum.photos/seed/bcg-answer-engine/500/600",
-  },
-  {
-    kicker: "Lead With Advantage",
-    title: "Artificial Intelligence at Scale",
-    text: "Applied AI is now the difference between advantage and catch-up. See how leaders are scaling it responsibly.",
-    cta: "Navigate what's next",
-    href: "https://www.bcg.com/capabilities/artificial-intelligence",
-    className: "tile-2",
-    image: "https://picsum.photos/seed/bcg-ai-scale/500/600",
-  },
-  {
-    kicker: "Build Tomorrow",
-    title: "Meet BCG X",
-    text: "New products, services, and businesses — built in partnership with the world’s largest organizations.",
-    cta: "Start your transformation",
-    href: "https://www.bcg.com/x/",
-    className: "tile-3",
-    image: "https://picsum.photos/seed/bcg-build-studio/500/600",
-  },
-];
+// const TILES = [
+//   {
+//     kicker: "BCG Answer",
+//     title: "BCG Answer",
+//     text: "Discover the answer to your most important business challenges. BCG Answer delivers integrated insights powered by our cross-functional expertise and the latest thinking shaping today’s business decisions.",
+//     cta: "Ask us a question",
+//     href: "https://www.bcg.com/bcg-answer",
+//     className: "tile-1",
+//     image: "https://picsum.photos/seed/bcg-answer-engine/500/600",
+//   },
+//   {
+//     kicker: "Lead With Advantage",
+//     title: "Artificial Intelligence at Scale",
+//     text: "Applied AI is now the difference between advantage and catch-up. See how leaders are scaling it responsibly.",
+//     cta: "Navigate what's next",
+//     href: "https://www.bcg.com/capabilities/artificial-intelligence",
+//     className: "tile-2",
+//     image: "https://picsum.photos/seed/bcg-ai-scale/500/600",
+//   },
+//   {
+//     kicker: "Build Tomorrow",
+//     title: "Meet BCG X",
+//     text: "New products, services, and businesses — built in partnership with the world’s largest organizations.",
+//     cta: "Start your transformation",
+//     href: "https://www.bcg.com/x/",
+//     className: "tile-3",
+//     image: "https://picsum.photos/seed/bcg-build-studio/500/600",
+//   },
+// ];   
 
 const INDUSTRIES = [
   {
@@ -439,21 +439,21 @@ function Nav({ onTrackClick, onShowServices, onShowCompany, onGoHome, onMenuTogg
                 </button>
                 <div className={`bcg-nav-dropdown ${openMenu === item.label ? "open" : ""}`}>
                   {item.submenu.map((sub) => (
-                    <a
-                      key={sub.label}
-                      className="bcg-nav-dropdown-link"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setOpenMenu(null);
-                        if (sub.kind === "services") {
-                          onShowServices?.(sub.value);
-                        } else if (sub.kind === "company") {
-                          onShowCompany?.(sub.value);
-                        }
-                      }}
-                    >
-                      {sub.label}
-                    </a>
+                   <a
+  key={sub.label}
+  className="bcg-nav-dropdown-link"
+  onClick={(e) => {
+    e.preventDefault();
+    setOpenMenu(null);
+    if (sub.kind === "services") {
+      onShowServices?.(sub.value);
+    } else if (sub.kind === "company") {
+      onShowCompany?.(sub.value);
+    }
+  }}
+>
+  {sub.label}
+</a>
                   ))}
                 </div>
               </div>
